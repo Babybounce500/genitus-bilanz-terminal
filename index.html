@@ -209,8 +209,7 @@
     out.pb = info?.priceToBook ?? null;
     out.ev_ebitda = info?.enterpriseToEbitda ?? null;
     out.beta = info?.beta ?? null;
-    const div = info?.dividendYield;
-    out.dividend_yield = (typeof div==='number') ? (div<1?div*100:div) : null;
+    out.dividend_yield = (typeof info?.dividendYield==='number') ? info.dividendYield : null;
     out.payout_ratio = info?.payoutRatio ? info.payoutRatio*100 : null;
     return out;
   }
